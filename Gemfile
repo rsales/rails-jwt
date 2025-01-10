@@ -33,7 +33,16 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
-# gem "rack-cors"
+gem "rack-cors"
+
+# devise for authentication
+gem 'devise'
+
+# devise-jwt for JWT token
+gem 'devise-jwt'
+
+# jsonapi-serializer for jsonapi serialization
+gem 'jsonapi-serializer'
 
 group :development, :test do
   # A Ruby gem to load environment variables from `.env`.
