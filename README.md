@@ -1,24 +1,32 @@
-# README
+# rails-jwt
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project aims to test the implementation of devise with jwt. For future projects.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Ways to test Authentication with CURL
+### Sign-up 
+```bash
+curl --location 'http://localhost:3000/signup' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "user": {
+    "email": "test@test.com",
+    "password": "password"
+  }
+}'
+```
+### Login
+```bash
+curl --location 'http://localhost:3000/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "user":{
+        "email":"test2@test.com",
+        "password": "password"
+    }
+}'
+```
+### Sign-out
+```bash
+curl --location --request DELETE 'http://localhost:3000/logout' \
+--header 'Authorization: Bearer xxxxxx'
+```
